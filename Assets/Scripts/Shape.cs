@@ -14,6 +14,8 @@ public class Shape : MonoBehaviour
 
     public List<Triangle> triangles;
     public List<Triangle> possibleTriangles; // Neighboring parentless triangles that can be added to the shape
+    
+    public bool isInitiallySmall;
     public bool isCorrectlyPlaced;
     public bool usedAsHint;
 
@@ -32,6 +34,7 @@ public class Shape : MonoBehaviour
         triangles = new List<Triangle>();
         possibleTriangles = new List<Triangle>();
         _beingDragged = false;
+        isInitiallySmall = true;
         isCorrectlyPlaced = false;
         usedAsHint = false;
     }
@@ -48,6 +51,11 @@ public class Shape : MonoBehaviour
     {
         if (!_lookup.isRunning || usedAsHint) return;
         _beingDragged = true;
+        if (isInitiallySmall)
+        {
+            transform.localScale *= 2;
+            isInitiallySmall = false;
+        }
 
         // While holding the shape, the shape's Z is made to be the smallest among the shapes to make sure it is always visible
         _lookup.topShapeZ += Lookup.SmallZ;

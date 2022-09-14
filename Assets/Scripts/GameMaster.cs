@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,9 +39,12 @@ public class GameMaster : MonoBehaviour
     {
         lookup.size = difficulty == -1 ? _rw.Size : difficulty + 4;
         lookup.shapeCount = difficulty == -1 ? _rw.ShapeCount : difficulty * 3 + 6;
+        lookup.difficulty = lookup.size - 4;
         lookup.minimumYToSnap = (4 - lookup.size) / 2f;
         lookup.boardOffset = (1 - lookup.size) * 0.5f;
         lookup.originPosition = board.transform.position + new Vector3(lookup.boardOffset, lookup.boardOffset, 0);
+        lookup.shapesOriginPosition = new Vector3(-3, -5 - lookup.difficulty, 0);
+        
         
         board.gameObject.SetActive(true);
         if (!board.initialized)

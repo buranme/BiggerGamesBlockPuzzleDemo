@@ -50,7 +50,7 @@ public class Board : MonoBehaviour
                 triangle.SetParent(shape, lookup.triangleSprites[i]);
             }
         }
-        Helper.ShuffleShapes(ref _shapes);
+        _helper.ShuffleShapes(ref _shapes);
     }
 
     // Gets called by the gm if the player chose one of the three difficulties
@@ -78,7 +78,7 @@ public class Board : MonoBehaviour
             
             AddTriangleToShape(shape, _shapes.IndexOf(shape), triangle);
         }
-        Helper.ShuffleShapes(ref _shapes);
+        _helper.ShuffleShapes(ref _shapes);
     }
 
     // Method to add a given triangle to a given shape, afterwards checks if there are any new neighboring parentless triangles to be considered
@@ -170,5 +170,11 @@ public class Board : MonoBehaviour
     public ref List<Shape> GetShapes()
     {
         return ref _shapes;
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown("up"))
+            print(lookup.cam.ScreenToWorldPoint(Input.mousePosition));
     }
 }

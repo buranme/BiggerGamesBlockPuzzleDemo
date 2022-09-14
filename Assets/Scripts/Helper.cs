@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -80,11 +81,19 @@ public class Helper
     }
 
     // Method to place the shapes randomly after creation
-    public static void ShuffleShapes(ref List<Shape> shapes)
+    public void ShuffleShapes(ref List<Shape> shapes)
     {
+        var start = _lookup.shapesOriginPosition;
         for (var i = 0; i < shapes.Count; i++)
         {
-            shapes[i].transform.position = new Vector3(Random.Range(-2f, 2f), Random.Range(-6f, -2f), -i * Lookup.SmallZ);
+            shapes[i].transform.localScale *= 0.5f;
+            var offsetX = i / (_lookup.shapeCount / 3) * Lookup.ShapesSpacingX;
+            var offsetY = i % (_lookup.shapeCount / 3) * Lookup.ShapesSpacingY;
+            var offsetZ = i * Lookup.SmallZ;
+            var pos = new Vector3( offsetX, offsetY, offsetZ);
+            //var temp = Object.Instantiate(_lookup.triangleReference, start + pos, Quaternion.identity);
+            //temp.PaintTo(_lookup.hintSprite);
+            shapes[i].transform.position = start + pos;
         }
     }
 
