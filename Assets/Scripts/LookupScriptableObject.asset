@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c8e1578dd4cf7419218d90065c3653, type: 3}
+  m_Name: LookupScriptableObject
+  m_EditorClassIdentifier: 
+  algorithm: 1
+  isRunning: 1
+  size: 4
+  shapeCount: 6
+  originPosition: {x: -1.5, y: 1.5, z: 0}
+  minimumYToSnap: 0
+  boardOffset: -1.5
+  topShapeZ: -0.005499998
+  triangleReference: {fileID: 7366646328154920289, guid: f46e322583c413149a24928fbea5b87e, type: 3}
+  shapeReference: {fileID: 3302710754373295457, guid: aed7ad64a4f8c6f4b87e8886c60d2ec5, type: 3}
+  cam: {fileID: 0}
+  triangleSprites:
+  - {fileID: 21300000, guid: 1253c130546b9bc47b9671f7a0eb182a, type: 3}
+  - {fileID: 21300000, guid: ba67b68926911f548b8a9e0bb86381b4, type: 3}
+  - {fileID: 21300000, guid: 3c6f09d942488cc42aedd41078f9f792, type: 3}
+  - {fileID: 21300000, guid: 94442029913a6b8458e4529e1be704bc, type: 3}
+  - {fileID: 21300000, guid: 32eb3607d80e298428ded7ea4833def4, type: 3}
+  - {fileID: 21300000, guid: 037f96ad2d0096d4db65d51bcf0f093f, type: 3}
+  - {fileID: 21300000, guid: 849023181978e8a49be2ab1f44acc54a, type: 3}
+  - {fileID: 21300000, guid: c57dd4ab1d2488543b00fdb4cc20bfcd, type: 3}
+  - {fileID: 21300000, guid: 38d839dfc3e38b14a83d4a69c38e6bd4, type: 3}
+  - {fileID: 21300000, guid: 73ea8b8cb5141fc469582b1df7d7b793, type: 3}
+  - {fileID: 21300000, guid: abaf8974abd4c7342aa0ab3557199b09, type: 3}
+  - {fileID: 21300000, guid: 06308a4023678ad45808efa961a9910d, type: 3}
+  hintSprite: {fileID: 21300000, guid: ff3a1a51599e3594585b6b22f26a2d94, type: 3}
