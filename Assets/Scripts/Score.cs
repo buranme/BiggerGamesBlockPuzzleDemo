@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
     [SerializeField] private Text totalScoreText;
     [SerializeField] private Text puzzleScoreText;
     
-    private readonly Vector3 _changePosition = new (0,-370,0);     // Variables to manipulate the puzzle score
+    private readonly Vector3 _changePosition = new (0,-220,0);     // Variables to manipulate the puzzle score
     private const int ChangeFontSize = 160;
 
     private int _totalScore;
